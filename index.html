@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 <body>
     <header>
@@ -24,21 +24,25 @@
     <div class="displayContainer">
         <p class="display"></p>
     </div>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>0</button>
-        <button>+</button>
-        <button>-</button>
-        <button>X</button>
-        <button>%</button>
-        <button>=</button>
+        <button onclick="displayValue('1')">1</button>
+        <button onclick="displayValue('2')">2</button>
+        <button onclick="displayValue('3')">3</button>
+        <button onclick="displayValue('4')">4</button>
+        <button onclick="displayValue('5')">5</button>
+        <button onclick="displayValue('6')">6</button>
+        <button onclick="displayValue('7')">7</button>
+        <button onclick="displayValue('8')">8</button>
+        <button onclick="displayValue('9')">9</button>
+        <button onclick="displayValue('0')">0</button>
+        <button onclick="displayValue('+')">+</button>
+        <button onclick="displayValue('-')">-</button>
+        <button onclick="displayValue('*')">*</button>
+        <button onclick="displayValue('/')">/</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="displayValue('.')">.</button>
+        <button onclick="clearDisplay()">C</button>
     </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
