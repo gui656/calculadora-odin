@@ -34,3 +34,8 @@ function calculate() {
         display.innerText = "Error";
     }
 }
+
+function backSpace(text){
+    let newText = text.slice(0, -1);
+    display.textContent = newText;
+}

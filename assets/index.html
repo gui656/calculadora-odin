@@ -8,14 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./Styles/style.css">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 <body>
     <header>
         <div>
           <img src="./images/—Pngtree—3d logo design vector cdr_5883019.png" alt="logo" class="logo">
-          <h1>Calculadora Odin 1.0</h1>
+          <h1>Calculadora Odin 2.0</h1>
         </div>
         
     </header>
@@ -40,9 +40,10 @@
         <button class="btn" onclick="operatorBtn('/')">/</button>
         <button onclick="calculate()">=</button>
         <button onclick="displayValue('.')">.</button>
+        <button onclick="backSpace(display.innerText)">DEL</button>
         <button onclick="clearDisplay()">C</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.1.0/math.min.js"></script>
-    <script src="./script.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>
