@@ -1,15 +1,10 @@
 const display = document.querySelector('.display')
-
-let displayText = display.textContent
-let textLength = displayText.length
-let displayCurrentValue = display.innerText
-
 let operatorActive = false;
 let maxLength = 12
 
 const displayValue = (value) => {
-    if(textLength !== maxLength){
-        displayText += value
+    if(display.textContent.length !== maxLength){
+        display.textContent += value
         operatorActive = false
     } else {
         calculate()
@@ -17,29 +12,30 @@ const displayValue = (value) => {
 }
 
 const operatorBtn = (operator) => {
-    if(displayText !== '' && textLength !== maxLength){
+    if(display.textContent !== '' && display.textContent.length !== maxLength){
        if(!operatorActive){
-            displayText += operator
+            display.textContent += operator
             operatorActive = true 
         }    
     }    
 }
 
 const clearDisplay = function (){
-    displayText = ''
+    display.textContent = ''
     operatorActive = false
 }
 
 function calculate() {
     try {
-        let result = math.evaluate(displayCurrentValue);
-        displayCurrentValue = (result === undefined || result === "") ? "Error" : result;
+        let result = math.evaluate(display.innerText);
+        display.innerText = (result === undefined || result === "") ? "Error" : result;
     } catch (error) {
-        displayCurrentValue = "Error";
+        display.innerText = "Error";
     }
 }
 
 function backSpace(text){
     let newText = text.slice(0, -1);
-    displayText = newText;
+    display.textContent = newText;
 }
+
