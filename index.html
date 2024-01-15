@@ -42,7 +42,52 @@
         <button onclick="displayValue('.')">.</button>
         <button onclick="clearDisplay()">C</button>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.1.0/math.min.js"></script>
 
-    <script src="./script.js"></script>
+'   <script>
+
+        const display = document.querySelector(".display")
+
+        function displayValue(value){
+        display.innerText += value
+        }
+
+        function clearDisplay(){
+            display.textContent = ""
+        }
+
+        function calculate() {
+            try {
+                display.innerText = math.evaluate(display.innerText);
+            } catch (error) {
+                display.innerText = "Error";
+            }
+        }
+
+        function calculate() {
+            try {
+                let result = math.evaluate(display.innerText);
+                display.innerText = (result === undefined || result === "") ? "Error" : result;
+            } catch (error) {
+                display.innerText = "Error";
+            }
+        }
+
+        const buttons = document.querySelectorAll(".btn");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", function() {
+                const buttonText = button.innerText;
+
+                if (buttonText === "C") {
+                    clearDisplay();
+                } else if (buttonText === "=") {
+                    calculate();
+                } else {
+                    displayValue(buttonText);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
